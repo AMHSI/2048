@@ -43,12 +43,14 @@ GameManager.prototype.setup = function () {
     this.over        = previousState.over;
     this.won         = previousState.won;
     this.keepPlaying = previousState.keepPlaying;
+    this.scoreSaved  = previousState.scoreSaved || false;
   } else {
     this.grid        = new Grid(this.size);
     this.score       = 0;
     this.over        = false;
     this.won         = false;
     this.keepPlaying = false;
+    this.scoreSaved  = false;
 
     // Add the initial tiles
     this.addStartTiles();
@@ -105,7 +107,8 @@ GameManager.prototype.serialize = function () {
     score:       this.score,
     over:        this.over,
     won:         this.won,
-    keepPlaying: this.keepPlaying
+    keepPlaying: this.keepPlaying,
+    scoreSaved:  this.scoreSaved
   };
 };
 
@@ -187,6 +190,14 @@ GameManager.prototype.move = function (direction) {
     }
 
     this.actuate();
+
+    // Check if game ended and save score to leaderboard
+    if (this.isGameTerminated() && !this.scoreSaved) {
+      this.scoreSaved = true;
+      if (typeof leaderboardManager !== 'undefined') {
+        leaderboardManager.saveScore(this.score, this.won);
+      }
+    }
   }
 };
 
