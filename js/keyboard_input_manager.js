@@ -51,6 +51,11 @@ KeyboardInputManager.prototype.listen = function () {
 
   // Respond to direction keys
   document.addEventListener("keydown", function (event) {
+      // Prevent game controls when modal is open
+  if (document.getElementById('username-modal').style.display === 'block') {
+      return;
+    }
+
     var modifiers = event.altKey || event.ctrlKey || event.metaKey ||
                     event.shiftKey;
     var mapped    = map[event.which];
