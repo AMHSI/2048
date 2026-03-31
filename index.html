@@ -15,6 +15,10 @@
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+  
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
 </head>
 <body>
   <div class="container">
@@ -80,6 +84,21 @@
     </div>
    </div>
 
+   <!-- Username Prompt Modal -->
+   <div id="username-modal" class="modal">
+     <div class="modal-content">
+       <h2>Enter Your Username</h2>
+       <input type="text" id="username-input" placeholder="Enter username..." maxlength="20">
+       <button id="username-submit">Start Playing</button>
+     </div>
+   </div>
+
+   <!-- Leaderboard -->
+   <div class="leaderboard-container">
+     <h3>Top 20 Players</h3>
+     <div id="leaderboard-list"></div>
+   </div>
+
   <script src="js/bind_polyfill.js"></script>
   <script src="js/classlist_polyfill.js"></script>
   <script src="js/animframe_polyfill.js"></script>
@@ -88,6 +107,7 @@
   <script src="js/grid.js"></script>
   <script src="js/tile.js"></script>
   <script src="js/local_storage_manager.js"></script>
+  <script src="js/leaderboard.js"></script>
   <script src="js/game_manager.js"></script>
   <script src="js/application.js"></script>
 </body>
