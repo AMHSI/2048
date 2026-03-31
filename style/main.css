@@ -148,6 +148,117 @@ hr {
     margin: 0 auto;
 }
 
+/* Modal Styles */
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background-color: #011689;
+    color: white;
+    margin: 15% auto;
+    padding: 30px;
+    border: 2px solid #098232;
+    border-radius: 10px;
+    width: 400px;
+    text-align: center;
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    color: white;
+}
+
+.modal-content input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #098232;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+}
+
+.modal-content button {
+    background: #098232;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.modal-content button:hover {
+    background: #076028;
+}
+
+/* Leaderboard Styles */
+.leaderboard-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(1, 22, 137, 0.9);
+    border: 2px solid #098232;
+    border-radius: 10px;
+    padding: 15px;
+    color: white;
+    width: 250px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.leaderboard-container h3 {
+    margin: 0 0 10px 0;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+}
+
+.leaderboard-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 14px;
+}
+
+.leaderboard-item:last-child {
+    border-bottom: none;
+}
+
+.leaderboard-rank {
+    font-weight: bold;
+    color: #098232;
+    margin-right: 8px;
+}
+
+.leaderboard-username {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.leaderboard-score {
+    font-weight: bold;
+    margin-left: 8px;
+}
+
+.leaderboard-star {
+    color: #FFD700;
+    margin-left: 5px;
+}
+
 .game-layout {
     display: flex;
     gap: 40px;
